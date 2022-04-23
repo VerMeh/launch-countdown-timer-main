@@ -13,7 +13,7 @@ let timeLeft = {
 let totalSeconds;
 
 function init() {
-  totalSeconds = Math.floor((new Date("01.01.2022") - new Date()) / 1000);
+  totalSeconds = Math.floor((new Date("01.01.2023") - new Date()) / 1000);
   setTimeLeft();
   let interval = setInterval(() => {
     if (totalSeconds < 0) {
@@ -23,21 +23,21 @@ function init() {
     //console.log(timeLeft);
   }, 1000);
 }
- 
+
 function countTime() {
   if (totalSeconds > 0) {
-      --timeLeft.s;
-      if (timeLeft.m >= 0 && timeLeft.s < 0) {
-          timeLeft.s = 59;
-          --timeLeft.m;
-          if (timeLeft.h >= 0 && timeLeft.m < 0) {
-            timeLeft.m = 59;
-            --timeLeft.h;
-            if (timeLeft.d >= 0 && timeLeft.h < 0) {
-                timeLeft.h = 23;
-                --timeLeft.d;
-            }
+    --timeLeft.s;
+    if (timeLeft.m >= 0 && timeLeft.s < 0) {
+      timeLeft.s = 59;
+      --timeLeft.m;
+      if (timeLeft.h >= 0 && timeLeft.m < 0) {
+        timeLeft.m = 59;
+        --timeLeft.h;
+        if (timeLeft.d >= 0 && timeLeft.h < 0) {
+          timeLeft.h = 23;
+          --timeLeft.d;
         }
+      }
     }
   }
   --totalSeconds;
@@ -45,10 +45,10 @@ function countTime() {
 }
 
 function printTime() {
-    days.innerText = timeLeft.d;
-    hours.innerText = timeLeft.h;
-    minutes.innerText = timeLeft.m;
-    seconds.innerText = timeLeft.s;
+  days.innerText = timeLeft.d;
+  hours.innerText = timeLeft.h;
+  minutes.innerText = timeLeft.m;
+  seconds.innerText = timeLeft.s;
 }
 
 function setTimeLeft() {
